@@ -1,0 +1,12 @@
+# Ignorar as pastas de cache do Python
+__pycache__/
+*.pyc
+
+# Ignorar o ambiente virtual 
+venv/
+env/
+
+# Ignorar arquivos de exemplo e testes locais
+exemplo_bits.py
+exemplo_float.py
+interfacemodbus.py

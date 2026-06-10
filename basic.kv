@@ -1,0 +1,84 @@
+#:kivy 1.11.1
+
+
+
+<MyWidget>:
+    orientation: 'vertical'
+    BoxLayout:
+        Label: 
+            id: lb
+            text: 'IP:'
+            halign: 'center'
+            valign: 'middle'
+            text_size: self.size
+            size_hint: (1, 0.2)
+        TextInput:
+            id: ip
+            halign: 'center'
+            size_hint: (1, 0.8)
+    BoxLayout:
+        Label: 
+            id: lb2
+            text: 'Porta:'
+            size_hint: (1, 0.2)
+        TextInput:
+            id: porta
+            size_hint: (1, 0.8)
+    Button:
+        text: 'Conectar'
+        on_press: root.connectar()
+    BoxLayout:
+        Label:
+            id: lb3
+            text: 'Reg:'
+            size_hint: (1, 0.2)
+        TextInput:
+            id: reg
+            size_hint: (1, 0.8)
+    BoxLayout:
+        Label:
+            id: lb4
+            text: 'Valor da Leitura:'
+            size_hint: (1, 0.2)
+        Label:
+            id: ler
+            size_hint: (1, 0.8)
+    BoxLayout:
+        Label:
+            id: lb5
+            text: 'Valor da Escrita:'
+            size_hint: (1, 0.2)
+        TextInput:
+            id: escrever
+            size_hint: (1, 0.8)
+    BoxLayout:
+        Button:
+            text: 'Holding Register'
+            on_press: root.tipo = '1'
+        Button:
+            text: 'Coil'
+            on_press: root.tipo = '2'
+        Button:
+            text: 'Input Register'
+            on_press: root.tipo = '3'
+        Button:
+            text: 'Discrete Input'
+            on_press: root.tipo = '4'
+        Button:
+            text: 'Float'
+            on_press: root.tipo = '5'
+        Button:
+            text: 'Bit'
+            on_press: root.tipo = '6'
+    BoxLayout:
+        Button:
+            text: 'Ler'
+            on_press: root.ler()
+        Button:
+            text: 'Escrever'
+            on_press: root.escrever()
+    BoxLayout:
+        Label:
+            text: 'Leitura Contínua'
+        CheckBox:
+            id: lcon
